@@ -6,6 +6,9 @@ body {
 	padding: 0;
 	margin: 0;
 }
+nav a:last-child {
+	margin-right: 0;
+}
 a:hover, a:focus {
 	color: #eb3812;
 }
@@ -25,6 +28,15 @@ header {
 	height: 100px;
 	background-color: #ccc;
 }
+header button {
+	background: #e29839;
+	color: #fff;
+	cursor: pointer;
+	right: 0;
+	padding: 10px 5%;
+	position: absolute;
+	top: 0;
+}
 nav {
 	width: 100%;
 	padding-top: 62px;
@@ -39,25 +51,47 @@ nav a {
 	float: left;
 	margin-right: 0.5%;
 }
-nav a:last-child {
-	margin-right: 0;
-}
 .main {
 	position:relative;
 	min-height:100%;
 	width: 100%;
 }
 #content {
-	float: left;
 	background-color: #fff;
+	position:absolute;
+	z-index: 10;
 }
 .sidebar {
-	height: 100%;
+	background:#e29839;
+	height: 65%;
 	width: 30%;
 	position: absolute;
 	z-index: 0;
 	right: 0;
+	overflow-x: hidden;
 	padding-top: 60px;
+	transition: 0.5s;
+}
+#main {
+	transition: margin-left .5s;
+}
+.sidebar {
+	padding-top: 15px;
+}
+.sidebar a {
+	font-size: 18px;
+}
+article {
+	float: left;
+	width: 30%;
+	margin: 10px 1.7%;
+}
+article img {
+	max-height: 225px;
+	width: 100%;
+}
+article:last-child {
+	margin-right: 0;
 }
 footer {
 	background-color: #000;
@@ -71,3 +105,10 @@ footer {
 	position:absolute;
 }
 
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+article {
+	float: none;
+	width: 100%;
+	margin: 10px 0;
+}
+}
